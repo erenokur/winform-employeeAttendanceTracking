@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api\AccessLogApi.cs" />
+    <Compile Include="Api\AccessLogSocket.cs" />
     <Compile Include="Enums\AccessDirection.cs" />
     <Compile Include="Enums\VerifyStatusCode.cs" />
     <Compile Include="Forms\SettingsForm.cs">

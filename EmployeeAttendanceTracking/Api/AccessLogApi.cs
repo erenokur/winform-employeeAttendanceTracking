@@ -59,9 +59,9 @@ namespace EmployeeAttendanceTracking.Api
                     string responseString = await response.Content.ReadAsStringAsync();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-
+                logger.LogErrors(ex.ToString(), "GetAccesLog");
             }
         }
     }
