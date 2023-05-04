@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace EmployeeAttendanceTracking.Interface
 {
+    /// <summary>
+    /// AccessLog 
+    /// </summary>
     public interface IAccessLog
     {
         string LogID { get; set; }

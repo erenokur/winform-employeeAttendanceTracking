@@ -34,5 +34,77 @@ namespace EmployeeAttendanceTracking.Properties {
                 this["API_ADDRESS"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SMTP_SERVER {
+            get {
+                return ((string)(this["SMTP_SERVER"]));
+            }
+            set {
+                this["SMTP_SERVER"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SMTP_PORT {
+            get {
+                return ((string)(this["SMTP_PORT"]));
+            }
+            set {
+                this["SMTP_PORT"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SMTP_USERNAME {
+            get {
+                return ((string)(this["SMTP_USERNAME"]));
+            }
+            set {
+                this["SMTP_USERNAME"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string SMTP_PASSWORD {
+            get {
+                return ((string)(this["SMTP_PASSWORD"]));
+            }
+            set {
+                this["SMTP_PASSWORD"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ADMIN_EMAIL {
+            get {
+                return ((string)(this["ADMIN_EMAIL"]));
+            }
+            set {
+                this["ADMIN_EMAIL"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SSL_ENABLED {
+            get {
+                return ((bool)(this["SSL_ENABLED"]));
+            }
+            set {
+                this["SSL_ENABLED"] = value;
+            }
+        }
     }
 }

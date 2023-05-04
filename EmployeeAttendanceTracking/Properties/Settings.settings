@@ -5,5 +5,23 @@
     <Setting Name="API_ADDRESS" Type="System.String" Scope="User">
       <Value Profile="(Default)">https://interview.ones.com.tr/API/AccessLog</Value>
     </Setting>
+    <Setting Name="SMTP_SERVER" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SMTP_PORT" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SMTP_USERNAME" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SMTP_PASSWORD" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ADMIN_EMAIL" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SSL_ENABLED" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

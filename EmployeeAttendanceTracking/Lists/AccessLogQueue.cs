@@ -9,7 +9,10 @@ namespace EmployeeAttendanceTracking.Lists
     {
         private readonly object lockObject = new object();
         private readonly Queue<T> items = new Queue<T>();
-
+        /// <summary>
+        /// Add new item to the Queue
+        /// </summary>
+        /// <param name="item"></param>
         public void Push(T item)
         {
             lock (lockObject)
@@ -17,7 +20,10 @@ namespace EmployeeAttendanceTracking.Lists
                 items.Enqueue(item);
             }
         }
-
+        /// <summary>
+        /// Remove new item from the Queue
+        /// </summary>
+        /// <returns></returns>
         public T Pop()
         {
             lock (lockObject)
@@ -28,7 +34,10 @@ namespace EmployeeAttendanceTracking.Lists
                 return items.Dequeue();
             }
         }
-
+        /// <summary>
+        /// Get all data for listing
+        /// </summary>
+        /// <returns></returns>
         public BindingList<T> GetAll()
         {
             lock (lockObject)

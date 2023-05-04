@@ -15,11 +15,6 @@ namespace EmployeeAttendanceTracking.Tools
             logger = LogManager.GetLogger("app_logger");
         }
 
-        public void LogTestMessage()
-        {
-            logger.Info("test message");
-        }
-
         public void LogAppStartDate()
         {
             logger.Info("App started..");
@@ -27,17 +22,12 @@ namespace EmployeeAttendanceTracking.Tools
 
         public void LogEmployeeEntered(string name)
         {
-            logger.Info("Employee " + name + " entered!");
+            logger.Info("Employee " + name + " entered without permission!");
         }
 
         public void LogEmployeeLeft(string name)
         {
-            logger.Info("Employee " + name + " entered!");
-        }
-
-        public void OpenPopUp()
-        {
-            logger.Info("Popup opened");
+            logger.Info("Employee " + name + " left without permission!");
         }
 
         public void AcceptPopUp()
@@ -47,11 +37,6 @@ namespace EmployeeAttendanceTracking.Tools
         public void AutoClosedPopUp()
         {
             logger.Info("Popup not closed by operator");
-        }
-
-        public void SendMail(string name)
-        {
-            logger.Info("Employee " + name + " entered!");
         }
 
         public void LogErrors(string error, string functionName)

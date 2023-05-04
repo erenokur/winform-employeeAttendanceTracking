@@ -9,6 +9,11 @@ namespace EmployeeAttendanceTracking.Api
 {
     class AccessLogApi
     {
+        /// <summary>
+        /// Random user information provider.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <returns></returns>
         public async Task<AccessLog> GetAccesLog(AppLogger logger)
         {
             try

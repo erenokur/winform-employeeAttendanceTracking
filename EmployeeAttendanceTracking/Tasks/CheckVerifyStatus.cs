@@ -19,11 +19,12 @@ namespace EmployeeAttendanceTracking.Tools
                 {
                     if (log.VerifyStatusCode > 0)
                     {
+                        CheckDirection checkDirection = new CheckDirection();
+                        string direction = checkDirection.CheckForString(log);
                         var owner = new Form() { Size = new Size(0, 0) };
                         Task.Delay(TimeSpan.FromSeconds(10))
                             .ContinueWith((t) => owner.Close(), TaskScheduler.FromCurrentSynchronizationContext());
-                        var dialogRes = MessageBox.Show(owner, "", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //DialogResult result = MessageBox.Show("Are you sure you want to continue?", "Confirmation", MessageBoxButtons.OK);
+                        var dialogRes = MessageBox.Show(owner, "kullanıcı " + log.Username + " yetkisiz " + direction + " yaptı.", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         if (dialogRes == DialogResult.OK)
                         {
                             logger.AcceptPopUp();
@@ -31,7 +32,10 @@ namespace EmployeeAttendanceTracking.Tools
                         else
                         {
                             logger.AutoClosedPopUp();
+                            SendMail mailServer = new SendMail();
+                            mailServer.SendEmail(log, direction, logger);
                         }
+                        checkDirection.CheckForUserLogging(log, logger);
                     }
                 });
             }
