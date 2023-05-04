@@ -37,7 +37,11 @@ namespace EmployeeAttendanceTracking.Api
                 return null;
             }
         }
-
+        /// <summary>
+        /// Can post user.
+        /// </summary>
+        /// <param name="log"></param>
+        /// <param name="logger"></param>
         public async void PostUser(AccessLog log, AppLogger logger)
         {
             try
