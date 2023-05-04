@@ -1,4 +1,5 @@
-﻿using EmployeeAttendanceTracking.Interface;
+﻿using EmployeeAttendanceTracking.Api;
+using EmployeeAttendanceTracking.Interface;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,6 +12,11 @@ namespace EmployeeAttendanceTracking.Tools
 {
     class CheckVerifyStatus
     {
+        /// <summary>
+        /// This is new thread to show unregistered activity. 
+        /// </summary>
+        /// <param name="log"></param>
+        /// <param name="logger"></param>
         public CheckVerifyStatus(AccessLog log, AppLogger logger)
         {
             try
@@ -28,6 +34,8 @@ namespace EmployeeAttendanceTracking.Tools
                         if (dialogRes == DialogResult.OK)
                         {
                             logger.AcceptPopUp();
+                            AccessLogApi api = new AccessLogApi();
+                            api.PostUser(log, logger);
                         }
                         else
                         {
