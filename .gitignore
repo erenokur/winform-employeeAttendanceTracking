@@ -381,3 +381,4 @@ InteropTests/NativeTests/out
 **/ScratchProject/ 
 
 App.config
+Properties/Settings*

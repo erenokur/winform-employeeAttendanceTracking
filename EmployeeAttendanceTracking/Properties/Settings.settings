@@ -23,5 +23,11 @@
     <Setting Name="SSL_ENABLED" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="API_IP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">85.105.252.181</Value>
+    </Setting>
+    <Setting Name="API_ENDPOINT" Type="System.String" Scope="User">
+      <Value Profile="(Default)">/API/AccessLog</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

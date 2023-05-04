@@ -106,5 +106,29 @@ namespace EmployeeAttendanceTracking.Properties {
                 this["SSL_ENABLED"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("85.105.252.181")]
+        public string API_IP {
+            get {
+                return ((string)(this["API_IP"]));
+            }
+            set {
+                this["API_IP"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("/API/AccessLog")]
+        public string API_ENDPOINT {
+            get {
+                return ((string)(this["API_ENDPOINT"]));
+            }
+            set {
+                this["API_ENDPOINT"] = value;
+            }
+        }
     }
 }

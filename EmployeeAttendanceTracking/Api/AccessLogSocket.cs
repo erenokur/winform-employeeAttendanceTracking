@@ -14,21 +14,28 @@ namespace EmployeeAttendanceTracking.Api
 {
     class AccessLogSocket
     {
+
+        /// <summary>
+        /// This code is for socket API requests.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <returns></returns>
         public async Task<AccessLog> GetAccessLog(AppLogger logger)
         {
             try
             {
                 using (TcpClient client = new TcpClient())
                 {
-                    string host = Properties.Settings.Default.API_ADDRESS;
+                    string host = Properties.Settings.Default.API_IP;
                     int port = 80;
+                    string endpoint = Properties.Settings.Default.API_ENDPOINT;
                     await client.ConnectAsync(host, port);
                     using (NetworkStream stream = client.GetStream())
                     using (StreamWriter writer = new StreamWriter(stream))
                     using (StreamReader reader = new StreamReader(stream))
                     {
-                        await writer.WriteLineAsync("GET / HTTP/1.1");
-                        await writer.WriteLineAsync($"Host: {Properties.Settings.Default.API_ADDRESS}");
+                        await writer.WriteLineAsync($"GET  {endpoint} HTTP/1.1");
+                        await writer.WriteLineAsync($"Host: {host}");
                         await writer.WriteLineAsync();
                         await writer.FlushAsync();
                         string response = await reader.ReadToEndAsync();
@@ -50,20 +57,20 @@ namespace EmployeeAttendanceTracking.Api
         {
             try
             {
-                string host = Properties.Settings.Default.API_ADDRESS;
+                string host = Properties.Settings.Default.API_IP;
                 int port = 80;
-                string endpoint = "/your/endpoint";
+                string endpoint = Properties.Settings.Default.API_ENDPOINT;
                 string postData = $"LogID={log.LogID}&Description=operator%20accepted";
 
                 using (TcpClient client = new TcpClient(host, port))
                 {
                     using (NetworkStream stream = client.GetStream())
                     {
-                        string request = $"POST {endpoint} HTTP/1.1" +
-                                         $"Host: {host}" +
-                                         $"Content-Type: application/x-www-form-urlencoded" +
-                                         $"Content-Length: {postData.Length}" +
-                                         $"{postData}";
+                        string request = $"POST {endpoint} HTTP/1.1\r\n" +
+                                 $"Host: {host}\r\n" +
+                                 $"Content-Type: application/x-www-form-urlencoded\r\n" +
+                                 $"Content-Length: {postData.Length}\r\n\r\n" +
+                                 $"{postData}";
                         byte[] requestBytes = Encoding.ASCII.GetBytes(request);
                         await stream.WriteAsync(requestBytes, 0, requestBytes.Length);
 
