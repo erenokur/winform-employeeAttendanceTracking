@@ -32,7 +32,7 @@ namespace EmployeeAttendanceTracking.Tasks
                         // Task will not going to do its job until mail settings made.
                         if (checkSetting.CheckMailSettingDone())
                         {
-                            AccessLog accessLog = await api.GetAccesLog(logger);
+                            AccessLog accessLog = await api.GetAccessLog(logger);
                             queue.Push(accessLog);
                             grid.Invoke(new Action(() =>
                             {
@@ -40,12 +40,12 @@ namespace EmployeeAttendanceTracking.Tasks
                             }));
                             CheckVerifyStatus statusCheck = new CheckVerifyStatus(accessLog, logger);
                         }
-                        await Task.Delay(40000);
+                        await Task.Delay(45000);
                     }
                     catch (Exception ex)
                     {
                         logger.LogErrors(ex.Message, "AccessLogApi");
-                        await Task.Delay(40000);
+                        await Task.Delay(45000);
                     }
                 }
             });
